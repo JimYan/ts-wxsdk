@@ -2,6 +2,8 @@
 
 > 申请测试好，请移步：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
+[API 文档](https://jimyan.github.io/ts-wxsdk/)
+
 ## proxy
 
 如果你的服务器需要通过代理服务器访问外网，需要在调用任何一个 API 之前设置代理，全局只需要设置一次。
@@ -11,7 +13,7 @@
 ```typescript
 import {setProxy} from 'ts-wxsdk';
 
-setProsy({
+setProxy({
     host: 'your proxy server host',
     port: 'your proxy server port',
 });

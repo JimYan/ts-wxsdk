@@ -5,7 +5,7 @@
 import axios from 'axios';
 
 /**
- * 获取黑名单列表返回值
+ * 黑名单列表返回值
  */
 interface IGetBlackList {
     /** 黑名单总数 */

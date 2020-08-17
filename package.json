@@ -16,7 +16,7 @@
         "start": "tsc -w",
         "test": "jest",
         "build": "tsc -p tsconfig.build.json",
-        "gendoc": "typedoc --options typedoc.json"
+        "gendoc": "typedoc --options typedoc.json && touch docs/.nojekyll"
     },
     "keywords": [
         "wxapi",
@@ -26,10 +26,10 @@
     "bin": {},
     "author": "jimyan",
     "license": "MIT",
-    "homepage": "https://github.com/JimYan/wxapi.git",
+    "homepage": "https://github.com/JimYan/ts-wxsdk.git",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/JimYan/wxapi.git"
+        "url": "git+https://github.com/JimYan/ts-wxsdk.git"
     },
     "devDependencies": {
         "@types/jest": "^26.0.0",

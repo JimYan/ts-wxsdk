@@ -66,6 +66,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>微信公众号(小程序)登录服务端接口，<a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html">官方文档</a></p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -73,7 +80,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_user_.iaccesstoken.html" class="tsd-kind-icon">IAccess<wbr>Token</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_user_.iaccesstokenresp.html" class="tsd-kind-icon">IAccess<wbr>Token<wbr>Resp</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_user_.icheckaccesstoken.html" class="tsd-kind-icon">ICheck<wbr>Access<wbr>Token</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_user_.icode2session.html" class="tsd-kind-icon">ICode2<wbr>Session</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_user_.iuserinfo.html" class="tsd-kind-icon">IUserinfo</a></li>
@@ -107,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L140">user.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L176">user.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -142,19 +149,22 @@
 					<a name="code2accesstoken" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> code2<wbr>Access<wbr>Token</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">code2<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>appId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, secret<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_token_.iaccesstoken.html" class="tsd-signature-type">IAccessToken</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">code2<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>appId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, appsecret<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_user_.iaccesstokenresp.html" class="tsd-signature-type">IAccessTokenResp</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L18">user.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L34">user.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>通过code换取用户的accessToken
+									<p>公众号登录
+										通过code换取用户的accessToken
 									如果errcode存在，那么不会返回access_token</p>
+									<pre><code><span class="hljs-keyword">const</span> {code2AccessToken} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/user&#x27;</span>
+<span class="hljs-keyword">const</span> tokenInfo = <span class="hljs-keyword">await</span> code2AccessToken(appid,appsecret,code)</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -163,7 +173,7 @@
 									<h5>appId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>secret: <span class="tsd-signature-type">string</span></h5>
+									<h5>appsecret: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 										</div>
@@ -173,7 +183,7 @@
 									<h5>code: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_token_.iaccesstoken.html" class="tsd-signature-type">IAccessToken</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_user_.iaccesstokenresp.html" class="tsd-signature-type">IAccessTokenResp</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -187,12 +197,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L43">user.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L69">user.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>小程序登录 根据code获取用户的session_key</p>
+									<p>小程序登录 根据code获取用户的session_key和openid</p>
+									<pre><code><span class="hljs-keyword">const</span> {code2Session} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/user&#x27;</span>
+<span class="hljs-keyword">const</span> session = <span class="hljs-keyword">await</span> code2Session(appid,secrect,code);</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -202,14 +214,25 @@
 								</li>
 								<li>
 									<h5>secret: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>小程序 appSecret</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>js_code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>登录时获取的 code</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> grant_type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;authorization_code&quot;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
+											<p>授权类型，此处只需填写 authorization_code</p>
 										</div>
 									</div>
 								</li>
@@ -228,12 +251,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L122">user.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L158">user.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>通过code一步换取userinfo</p>
+									<p>公众号号登录，通过code一步换取userinfo。</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -271,13 +294,13 @@
 					<a name="refreshaccesstoken" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> refresh<wbr>Access<wbr>Token</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">refresh<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>appId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, refreshToken<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_token_.iaccesstoken.html" class="tsd-signature-type">IAccessToken</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">refresh<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>appId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, refreshToken<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_user_.iaccesstokenresp.html" class="tsd-signature-type">IAccessTokenResp</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L72">user.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L98">user.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -298,7 +321,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_token_.iaccesstoken.html" class="tsd-signature-type">IAccessToken</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_user_.iaccesstokenresp.html" class="tsd-signature-type">IAccessTokenResp</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -312,24 +335,40 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L101">user.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L137">user.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>通过用户的accesstoken和openID获取用户的基本信息</p>
+									<p>公众号适用。
+									通过用户的accesstoken和openID获取用户的基本信息 拉取用户信息(需scope为 snsapi_userinfo)</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>accessToken: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>用户的accessToken，注意：这个accessToken和基础的accessToken不是同一个。</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>openID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>用户openid</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> lang: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;zh_CN&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>语言，默认&#39;zh_CN&#39;</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_user_.iuserinfo.html" class="tsd-signature-type">IUserinfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -346,16 +385,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L161">user.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L202">user.ts:202</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>accessToken: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>基础平台accessToken</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> nextOpenID: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>分页的下一步.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_user_.iuserlist.html" class="tsd-signature-type">IUserlist</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -402,7 +453,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../interfaces/_user_.iaccesstoken.html" class="tsd-kind-icon">IAccess<wbr>Token</a>
+						<a href="../interfaces/_user_.iaccesstokenresp.html" class="tsd-kind-icon">IAccess<wbr>Token<wbr>Resp</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../interfaces/_user_.icheckaccesstoken.html" class="tsd-kind-icon">ICheck<wbr>Access<wbr>Token</a>

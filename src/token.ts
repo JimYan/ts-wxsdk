@@ -11,7 +11,7 @@ interface IAccessToken {
     errmsg?: string;
 }
 /**
- * 获取微信全局access_token票据，2小时有效期。对小程序也有效。
+ * 获取微信基础平台的access_token票据，2小时有效期。对小程序也有效。
  * ~~~
  * import {accessToken} from 'ts-wxsdk/token'
  * const token = await accessToken(appid,appsecret)

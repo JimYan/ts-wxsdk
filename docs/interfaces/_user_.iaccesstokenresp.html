@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IAccessToken | ts-wxsdk</title>
+	<title>IAccessTokenResp | ts-wxsdk</title>
 	<meta name="description" content="Documentation for ts-wxsdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,21 +59,28 @@
 					<a href="../modules/_user_.html">&quot;user&quot;</a>
 				</li>
 				<li>
-					<a href="_user_.iaccesstoken.html">IAccessToken</a>
+					<a href="_user_.iaccesstokenresp.html">IAccessTokenResp</a>
 				</li>
 			</ul>
-			<h1>Interface IAccessToken</h1>
+			<h1>Interface IAccessTokenResp</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>code换取用户accessToken结果</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IAccessToken</span>
+						<span class="target">IAccessTokenResp</span>
 					</li>
 				</ul>
 			</section>
@@ -84,13 +91,13 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#access_token" class="tsd-kind-icon">access_<wbr>token</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#errcode" class="tsd-kind-icon">errcode</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#errmsg" class="tsd-kind-icon">errmsg</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#expires_in" class="tsd-kind-icon">expires_<wbr>in</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#openid" class="tsd-kind-icon">openid</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#refresh_token" class="tsd-kind-icon">refresh_<wbr>token</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstoken.html#scope" class="tsd-kind-icon">scope</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#access_token" class="tsd-kind-icon">access_<wbr>token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#errcode" class="tsd-kind-icon">errcode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#errmsg" class="tsd-kind-icon">errmsg</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#expires_in" class="tsd-kind-icon">expires_<wbr>in</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#openid" class="tsd-kind-icon">openid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#refresh_token" class="tsd-kind-icon">refresh_<wbr>token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_user_.iaccesstokenresp.html#scope" class="tsd-kind-icon">scope</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,7 +111,7 @@
 					<div class="tsd-signature tsd-kind-icon">access_<wbr>token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L4">user.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L11">user.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -114,9 +121,14 @@
 					<div class="tsd-signature tsd-kind-icon">errcode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L9">user.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L20">user.ts:20</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>微信返回错误码</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="errmsg" class="tsd-anchor"></a>
@@ -124,7 +136,7 @@
 					<div class="tsd-signature tsd-kind-icon">errmsg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L10">user.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L21">user.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,9 +146,14 @@
 					<div class="tsd-signature tsd-kind-icon">expires_<wbr>in<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L5">user.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L13">user.ts:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>过期时间，一般为7200</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="openid" class="tsd-anchor"></a>
@@ -144,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">openid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L7">user.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L16">user.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -154,9 +171,14 @@
 					<div class="tsd-signature tsd-kind-icon">refresh_<wbr>token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L6">user.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L15">user.ts:15</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>refresh_token, 可以通过refresh_token来获取一个新的access_token</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="scope" class="tsd-anchor"></a>
@@ -164,9 +186,14 @@
 					<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimYan/wxapi/blob/bf64a78/src/user.ts#L8">user.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/JimYan/ts-wxsdk/blob/2d9b51d/src/user.ts#L18">user.ts:18</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>用户授权的作用域，使用逗号（,）分隔</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -210,28 +237,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_user_.iaccesstoken.html" class="tsd-kind-icon">IAccess<wbr>Token</a>
+						<a href="_user_.iaccesstokenresp.html" class="tsd-kind-icon">IAccess<wbr>Token<wbr>Resp</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#access_token" class="tsd-kind-icon">access_<wbr>token</a>
+								<a href="_user_.iaccesstokenresp.html#access_token" class="tsd-kind-icon">access_<wbr>token</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#errcode" class="tsd-kind-icon">errcode</a>
+								<a href="_user_.iaccesstokenresp.html#errcode" class="tsd-kind-icon">errcode</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#errmsg" class="tsd-kind-icon">errmsg</a>
+								<a href="_user_.iaccesstokenresp.html#errmsg" class="tsd-kind-icon">errmsg</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#expires_in" class="tsd-kind-icon">expires_<wbr>in</a>
+								<a href="_user_.iaccesstokenresp.html#expires_in" class="tsd-kind-icon">expires_<wbr>in</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#openid" class="tsd-kind-icon">openid</a>
+								<a href="_user_.iaccesstokenresp.html#openid" class="tsd-kind-icon">openid</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#refresh_token" class="tsd-kind-icon">refresh_<wbr>token</a>
+								<a href="_user_.iaccesstokenresp.html#refresh_token" class="tsd-kind-icon">refresh_<wbr>token</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_user_.iaccesstoken.html#scope" class="tsd-kind-icon">scope</a>
+								<a href="_user_.iaccesstokenresp.html#scope" class="tsd-kind-icon">scope</a>
 							</li>
 						</ul>
 					</li>
