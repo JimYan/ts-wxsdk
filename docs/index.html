@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ts-wxsdk</title>
+	<meta name="description" content="Documentation for ts-wxsdk">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">ts-wxsdk</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>ts-wxsdk</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p>#微信公众号 API 接口</p>
+				<blockquote>
+					<p>申请测试好，请移步：<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login</a></p>
+				</blockquote>
+				<a href="#proxy" id="proxy" style="color: inherit; text-decoration: none;">
+					<h2>proxy</h2>
+				</a>
+				<p>如果你的服务器需要通过代理服务器访问外网，需要在调用任何一个 API 之前设置代理，全局只需要设置一次。
+					如果服务器是直接连外网，那么忽略。
+				设置方法：</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {setProxy} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk&#x27;</span>;
+
+setProsy({
+    host: <span class="hljs-string">&#x27;your proxy server host&#x27;</span>,
+    port: <span class="hljs-string">&#x27;your proxy server port&#x27;</span>,
+});</code></pre>
+				<a href="#token" id="token" style="color: inherit; text-decoration: none;">
+					<h2>token</h2>
+				</a>
+				<p>获取全局 accessToken 或 jsapi ticket：</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {accessToken, ticket} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/token&#x27;</span>;
+
+<span class="hljs-comment">// 获取微信全局accesstoken，2小时有效期，建议定时刷新内部保存。</span>
+<span class="hljs-keyword">const</span> token = <span class="hljs-keyword">await</span> accessToken(appid, appsecret); <span class="hljs-comment">// appid和appsecret在微信公众号管理后台获取</span>
+
+<span class="hljs-comment">// 微信卡券api接口ticket或者jsapi ticket</span>
+<span class="hljs-keyword">const</span> jsticket = <span class="hljs-keyword">await</span> ticket(token, <span class="hljs-string">&#x27;jsapi&#x27;</span>);</code></pre>
+				<a href="#userinfo" id="userinfo" style="color: inherit; text-decoration: none;">
+					<h2>userinfo</h2>
+				</a>
+				<p>用户登录</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {code2AccessToken, refreshAccessToken, userinfo, code2userinfo, code2Session} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/user&#x27;</span>;
+
+<span class="hljs-comment">// 微信公众号登录，使用code换用户的accessToken和openId</span>
+<span class="hljs-keyword">const</span> accessToken = <span class="hljs-keyword">await</span> code2AccessToken(appid, appsecret, code);
+<span class="hljs-keyword">const</span> userinfo = <span class="hljs-keyword">await</span> userinfo(appid, openID);
+
+<span class="hljs-comment">// 小程序登录</span>
+<span class="hljs-keyword">const</span> info = <span class="hljs-keyword">await</span> code2Session(appid, appsecret, code);</code></pre>
+				<a href="#template" id="template" style="color: inherit; text-decoration: none;">
+					<h2>template</h2>
+				</a>
+				<p>发送模板消息</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {template} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/template&#x27;</span>;
+
+template&lt;{
+    name: {
+        value: <span class="hljs-built_in">string</span>;
+        color?: <span class="hljs-built_in">string</span>;
+    };
+}&gt;(accessToken, {
+    touser: <span class="hljs-string">&#x27;TO USER OPENID&#x27;</span>,
+    template_id: <span class="hljs-string">&#x27;3W-7l84S25TMqdzJPN7jaqE5Fj451aGobsc1wMD7NXU&#x27;</span>,
+    url: <span class="hljs-string">&#x27;https://www.baidu.com/&#x27;</span>,
+    topcolor: <span class="hljs-string">&#x27;#00ff00&#x27;</span>,
+    data: {
+        name: {
+            value: <span class="hljs-string">&#x27;name&#x27;</span>,
+            color: <span class="hljs-string">&#x27;#173177&#x27;</span>,
+        },
+    },
+});</code></pre>
+				<a href="#解析微信事件通知" id="解析微信事件通知" style="color: inherit; text-decoration: none;">
+					<h2>解析微信事件通知</h2>
+				</a>
+				<blockquote>
+					<p>微信消息通知具体见：<a href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html">https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html</a></p>
+				</blockquote>
+				<p>此 API 是把通知过来的 XML 内容解析成 JSON 格式。todo: 加密消息解密（当前版本没有处理）</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {parse} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/message&#x27;</span>;
+<span class="hljs-keyword">const</span> l = parse(wxSendMessage);</code></pre>
+				<a href="#回复消息" id="回复消息" style="color: inherit; text-decoration: none;">
+					<h2>回复消息</h2>
+				</a>
+				<blockquote>
+					<p>具体见：<a href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html">https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html</a></p>
+				</blockquote>
+				<p>这个 API 负责把对应的消息内容组装成 XML 格式。</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {text, image, video, voice, news} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ts-wxsdk/message.response&#x27;</span>;
+<span class="hljs-keyword">const</span> r = text({
+    ToUserName: <span class="hljs-string">&#x27;a&#x27;</span>,
+    FromUserName: <span class="hljs-string">&#x27;b&#x27;</span>,
+    Content: <span class="hljs-string">&#x27;s&#x27;</span>,
+});
+
+<span class="hljs-keyword">const</span> r = image({
+    ToUserName: <span class="hljs-string">&#x27;a&#x27;</span>,
+    FromUserName: <span class="hljs-string">&#x27;b&#x27;</span>,
+    Image: {
+        MediaId: <span class="hljs-string">&#x27;b&#x27;</span>,
+    },
+});
+
+<span class="hljs-keyword">const</span> r = video({
+    ToUserName: <span class="hljs-string">&#x27;a&#x27;</span>,
+    FromUserName: <span class="hljs-string">&#x27;b&#x27;</span>,
+    Video: {
+        MediaId: <span class="hljs-string">&#x27;11&#x27;</span>,
+        Title: <span class="hljs-string">&#x27;hello video&#x27;</span>,
+        Description: <span class="hljs-string">&#x27;desc&#x27;</span>,
+    },
+});
+
+<span class="hljs-keyword">const</span> r = voice({
+    ToUserName: <span class="hljs-string">&#x27;a&#x27;</span>,
+    FromUserName: <span class="hljs-string">&#x27;b&#x27;</span>,
+    Voice: {
+        MediaId: <span class="hljs-string">&#x27;voiceid&#x27;</span>,
+    },
+});
+
+<span class="hljs-keyword">const</span> r = news({
+    ToUserName: <span class="hljs-string">&#x27;a&#x27;</span>,
+    FromUserName: <span class="hljs-string">&#x27;b&#x27;</span>,
+    ArticleCount: <span class="hljs-number">2</span>,
+    Articles: {
+        item: [
+            {
+                Title: <span class="hljs-string">&#x27;t1&#x27;</span>,
+                Description: <span class="hljs-string">&#x27;d1&#x27;</span>,
+                PicUrl: <span class="hljs-string">&#x27;pu1&#x27;</span>,
+                Url: <span class="hljs-string">&#x27;u1&#x27;</span>,
+            },
+            {
+                Title: <span class="hljs-string">&#x27;t2&#x27;</span>,
+                Description: <span class="hljs-string">&#x27;d2&#x27;</span>,
+                PicUrl: <span class="hljs-string">&#x27;pu2&#x27;</span>,
+                Url: <span class="hljs-string">&#x27;u2&#x27;</span>,
+            },
+        ],
+    },
+});</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_blacklist_.html">&quot;blacklist&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_message_.html">&quot;message&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_message_response_.html">&quot;message.response&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_qrcode_.html">&quot;qrcode&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_tags_.html">&quot;tags&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_template_.html">&quot;template&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_token_.html">&quot;token&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_user_.html">&quot;user&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
