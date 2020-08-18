@@ -1,13 +1,22 @@
-#微信公众号 API 接口
+#ts-wxsdk
 
-> 申请测试好，请移步：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
+> 申请微信公众号沙箱测试号，请移步：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
 [API 文档](https://jimyan.github.io/ts-wxsdk/)
 
-## proxy
+## Installation
 
-如果你的服务器需要通过代理服务器访问外网，需要在调用任何一个 API 之前设置代理，全局只需要设置一次。
-如果服务器是直接连外网，那么忽略。
+```bash
+yarn add ts-wxsdk
+// or
+npm install ts-wxsdk -s
+```
+
+## Usage
+
+### 设置访问代理
+
+如果你的服务器需要通过代理服务器访问外网，需要在调用任何一个 API 之前设置代理，全局只需要设置一次。（如果服务器是直接连外网，那么忽略。）
 设置方法：
 
 ```typescript
@@ -15,11 +24,11 @@ import {setProxy} from 'ts-wxsdk';
 
 setProxy({
     host: 'your proxy server host',
-    port: 'your proxy server port',
+    port: your proxy server port,
 });
 ```
 
-## token
+### accessToken
 
 获取全局 accessToken 或 jsapi ticket：
 
@@ -33,9 +42,7 @@ const token = await accessToken(appid, appsecret); // appid和appsecret在微信
 const jsticket = await ticket(token, 'jsapi');
 ```
 
-## userinfo
-
-用户登录
+## 用户登录
 
 ```typescript
 import {code2AccessToken, refreshAccessToken, userinfo, code2userinfo, code2Session} from 'ts-wxsdk/user';
@@ -48,7 +55,7 @@ const userinfo = await userinfo(appid, openID);
 const info = await code2Session(appid, appsecret, code);
 ```
 
-## template
+### 模板消息
 
 发送模板消息
 
@@ -74,7 +81,7 @@ template<{
 });
 ```
 
-## 解析微信事件通知
+### 解析微信事件通知
 
 > 微信消息通知具体见：https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html
 
@@ -85,7 +92,7 @@ import {parse} from 'ts-wxsdk/message';
 const l = parse(wxSendMessage);
 ```
 
-## 回复消息
+### 被动回复
 
 > 具体见：https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html
 
@@ -93,12 +100,14 @@ const l = parse(wxSendMessage);
 
 ```typescript
 import {text, image, video, voice, news} from 'ts-wxsdk/message.response';
+// 文本消息
 const r = text({
     ToUserName: 'a',
     FromUserName: 'b',
     Content: 's',
 });
 
+// 图片消息
 const r = image({
     ToUserName: 'a',
     FromUserName: 'b',
@@ -107,6 +116,7 @@ const r = image({
     },
 });
 
+// 视频消息
 const r = video({
     ToUserName: 'a',
     FromUserName: 'b',
@@ -117,6 +127,7 @@ const r = video({
     },
 });
 
+// 语音消息
 const r = voice({
     ToUserName: 'a',
     FromUserName: 'b',
@@ -125,10 +136,11 @@ const r = voice({
     },
 });
 
+// 图文消息
 const r = news({
     ToUserName: 'a',
     FromUserName: 'b',
-    ArticleCount: 2,
+    ArticleCount: 2, // 文章数量
     Articles: {
         item: [
             {
@@ -147,3 +159,7 @@ const r = news({
     },
 });
 ```
+
+## License
+
+MIT
