@@ -1,5 +1,23 @@
 # ts-wxsdk
 
+![Node.js CI](https://github.com/JimYan/ts-wxsdk/workflows/Node.js%20CI/badge.svg)
+
+微信公众平台服务端 API SDK，使用 TS 开发，有完善的 TS 声明和单元测试。
+主要功能：
+
+-   [x] 微信公众号登录、小程序登录
+-   [x] 获取和刷新 accessToken
+-   [x] 发送模板消息
+-   [x] 解析微信事件推送和格式化回复消息
+-   [x] 黑名单管理
+-   [x] 标签管理
+-   [x] 生成长期 OR 临时二维码
+
+TODO：
+
+-   解析加密消息
+-   支付回调
+
 > 申请微信公众号沙箱测试号，请移步：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
 ## Installation
