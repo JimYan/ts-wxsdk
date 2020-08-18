@@ -1,4 +1,4 @@
-#ts-wxsdk
+# ts-wxsdk
 
 > 申请微信公众号沙箱测试号，请移步：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
