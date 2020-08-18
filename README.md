@@ -2,8 +2,6 @@
 
 > 申请微信公众号沙箱测试号，请移步：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
-[API 文档](https://jimyan.github.io/ts-wxsdk/)
-
 ## Installation
 
 ```bash
@@ -159,6 +157,16 @@ const r = news({
     },
 });
 ```
+
+更多的 API 请移步：[API 文档](https://jimyan.github.io/ts-wxsdk/)
+
+## Contributing
+
+项目已经设置了 GIT ACTIONS，在 PR 的时候需要检查：
+
+-   [x] 类型检测
+-   [x] 充分的注释
+-   [x] 单元测试
 
 ## License
 
